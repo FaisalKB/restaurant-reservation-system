@@ -15,7 +15,7 @@ const REQUIRED_PROPERTIES = [
  * List handler for reservation resources
  */
 async function list(req, res) {
-  const today = new Date().toLocaleDateString('en-US').replaceAll("/", "-");
+  const today = new Date().toLocaleDateString().replace(/\//g, '-');
   const { date = today, mobile_number } = req.query;
   let reservations;
   if (mobile_number) {
